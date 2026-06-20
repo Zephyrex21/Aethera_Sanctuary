@@ -1,98 +1,92 @@
-# 🌸 Aethera — MERN Stack Edition
+# Aethera — MERN Stack Edition
 
 A sanctuary for the world's rarest blooms.
 
+**Live:** [frontend-url].vercel.app · **API:** [backend-url].onrender.com
+
 ---
 
-## ⚡ Quick Start (copy-paste these 3 commands)
+## Quick Start (local dev)
 
 ```bash
-# 1. Install ALL dependencies (run this ONCE after extracting the zip)
+# 1. Install all dependencies
 npm run install:all
 
-# 2. Seed the database (run this ONCE — needs MongoDB running)
+# 2. Add your MongoDB Atlas URI to server/.env (see Configuration below)
+
+# 3. Seed the database (run once)
 npm run seed
 
-# 3. Start the app
+# 4. Start the app
 npm run dev
 ```
 
-Then open **http://localhost:5173** in your browser. ← **NOT :3000, NOT :5000**
+Open **http://localhost:5173** in your browser. ← NOT :5000 (that's the API)
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
-- **Node.js** v18 or higher → https://nodejs.org
-- **MongoDB** running locally
-
-  ```bash
-  # Start MongoDB (if installed locally)
-  mongod
-  # OR use MongoDB Compass / Atlas
-  ```
+- **Node.js** v18+ → https://nodejs.org
+- A **MongoDB Atlas** account (free tier) → https://mongodb.com/atlas
 
 ---
 
-## ⚠️ Common Errors & Fixes
+## Configuration
 
-| Error | Cause | Fix |
-|-------|-------|-----|
-| `'vite' is not recognized` | Client deps not installed | Run `npm run install:all` first |
-| `Cannot GET /` at localhost:3000 | You opened the API server, not the app | Go to **http://localhost:5173** |
-| `Cannot GET /` at localhost:5000 | Same — you opened the API server | Go to **http://localhost:5173** |
-| `MongoDB connection error` | MongoDB not running | Run `mongod` or check your Atlas URI in `server/.env` |
-| API calls fail / flowers don't load | Database not seeded | Run `npm run seed` |
-
----
-
-## 🔧 Configuration
-
-Edit `server/.env` (already created with defaults):
+Create `server/.env`:
 
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/aethera
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/aethera?retryWrites=true&w=majority
 ```
 
-To use **MongoDB Atlas**, replace `MONGODB_URI` with your Atlas connection string.
+Get your connection string from Atlas → **Connect → Drivers**. This file is gitignored — never commit it.
 
 ---
 
-## 🛠 Tech Stack
+## Common Errors & Fixes
 
-| Layer     | Technology          |
-|-----------|---------------------|
-| Frontend  | React 18 + Vite     |
-| Styling   | Tailwind CSS v3     |
-| Animation | Framer Motion       |
-| Backend   | Node.js + Express   |
-| Database  | MongoDB + Mongoose  |
+| Error | Fix |
+|-------|-----|
+| `'vite' is not recognized` | Run `npm run install:all` first |
+| `Cannot GET /` at :5000 | That's the API — open **:5173** instead |
+| `MongoDB connection error` | Check `MONGODB_URI` in `server/.env` and Atlas Network Access whitelist |
+| Flowers don't load | Run `npm run seed` |
 
 ---
 
-## 📁 Project Structure
+## Tech Stack
+
+| Layer     | Technology               |
+|-----------|---------------------------|
+| Frontend  | React 18 + Vite           |
+| Styling   | Tailwind CSS v3            |
+| Animation | Framer Motion              |
+| Backend   | Node.js + Express          |
+| Database  | MongoDB Atlas + Mongoose   |
+| Hosting   | Vercel (frontend) · Render (backend) |
+
+---
+
+## Project Structure
 
 ```
 aethera-mern/
-├── server/
-│   ├── .env              ← PORT & MongoDB config
-│   ├── index.js          ← Express entry (port 5000)
+├── server/              ← Express API (Render)
+│   ├── index.js
 │   ├── models/Flower.js
 │   ├── routes/flowers.js
-│   ├── data/flowers.js   ← 30 flowers seed data
 │   └── scripts/seed.js
-└── client/               ← React + Vite (port 5173)
+└── client/              ← React + Vite (Vercel)
+    ├── vercel.json       ← proxies /api to Render backend
     ├── public/flowers/   ← 30 flower images
     └── src/
-        ├── App.jsx
-        ├── components/   ← 15 components
-        └── utils/
 ```
 
 ---
 
-## 🌐 API Endpoints
+## API Endpoints
 
 | Method | Route | Description |
 |--------|-------|-------------|
@@ -102,4 +96,4 @@ aethera-mern/
 
 ---
 
-Built with ♥ by Zephyr Labs
+Built with ♥ by Saurabh Raj Shekhar
