@@ -4,6 +4,7 @@ A digital sanctuary showcasing 30 of the world's rarest and strangest flowers â€
 Built as a full MERN stack app with a glassmorphism UI, smooth animations, and a real backend powering every bloom's story.
 
 **Live:** https://aethera-sanctuary.vercel.app 
+
 **API Docs:** https://aethera-api.onrender.com/docs
 
 ---
