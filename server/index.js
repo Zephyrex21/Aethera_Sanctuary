@@ -2,7 +2,9 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import swaggerUi from "swagger-ui-express";
 import flowerRoutes from "./routes/flowers.js";
+import swaggerSpec from "./swagger.js";
 
 // override: true forces .env PORT=5000 to win over any system-level PORT env var
 dotenv.config({ override: true });
@@ -20,6 +22,9 @@ app.get("/api/health", (_req, res) =>
   res.json({ status: "ok", message: "Aethera API running 🌸" })
 );
 
+// Interactive API docs (Swagger UI) — lists every endpoint, like FastAPI's auto docs
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec, { customSiteTitle: "Aethera API Docs" }));
+
 // Root route — helpful message if user accidentally opens the API port
 app.get("/", (_req, res) => {
   res.send(`
@@ -36,9 +41,10 @@ app.get("/", (_req, res) => {
         <h2>🌸 Aethera API is running on port ${PORT}</h2>
         <p>This is the <strong>backend API</strong>, not the frontend.</p>
         <p>👉 Open the app at:
-          <a href="http://localhost:5173">http://localhost:5173</a>
+          <a href="https://aethera-sanctuary.vercel.app">https://aethera-sanctuary.vercel.app</a>
         </p>
         <hr/>
+        <p>📖 Full interactive API docs: <a href="/docs">/docs</a></p>
         <p>Available endpoints:<br/>
           <a href="/api/flowers"><code>GET /api/flowers</code></a><br/>
           <a href="/api/health"><code>GET /api/health</code></a>
