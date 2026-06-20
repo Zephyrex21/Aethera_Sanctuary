@@ -1,6 +1,7 @@
-# Aethera — MERN Stack Edition
+# Aethera — Sanctuary of Rare Blooms
 
-A sanctuary for the world's rarest blooms.
+A digital sanctuary showcasing 30 of the world's rarest and strangest flowers — from corpse flowers to ghost orchids.
+Built as a full MERN stack app with a glassmorphism UI, smooth animations, and a real backend powering every bloom's story.
 
 **Live:** [frontend-url].vercel.app · **API:** [backend-url].onrender.com
 
