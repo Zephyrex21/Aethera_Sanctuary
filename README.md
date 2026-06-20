@@ -1,4 +1,4 @@
-# 🌸 Aethera — Sanctuary of Rare Blooms
+# Aethera — Sanctuary of Rare Blooms🌸
 
 A digital sanctuary showcasing 30 of the world's rarest and strangest flowers — from corpse flowers to ghost orchids.
 Built as a full MERN stack app with a glassmorphism UI, smooth animations, and a real backend powering every bloom's story.
@@ -9,7 +9,7 @@ Built as a full MERN stack app with a glassmorphism UI, smooth animations, and a
 
 ---
 
-## ⚡ Quick Start (local dev)
+## Quick Start (local dev)
 
 ```bash
 # 1. Install all dependencies
@@ -28,14 +28,14 @@ Open **http://localhost:5173** in your browser. ← NOT :5000 (that's the API)
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Node.js** v18+ → https://nodejs.org
 - A **MongoDB Atlas** account (free tier) → https://mongodb.com/atlas
 
 ---
 
-## 🔧 Configuration
+## Configuration
 
 Create `server/.env`:
 
@@ -48,7 +48,7 @@ Get your connection string from Atlas → **Connect → Drivers**. This file is 
 
 ---
 
-## ⚠️ Common Errors & Fixes
+## Common Errors & Fixes
 
 | Error | Fix |
 |-------|-----|
@@ -59,7 +59,7 @@ Get your connection string from Atlas → **Connect → Drivers**. This file is 
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer     | Technology               |
 |-----------|---------------------------|
@@ -72,7 +72,7 @@ Get your connection string from Atlas → **Connect → Drivers**. This file is 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 aethera-mern/
@@ -89,7 +89,7 @@ aethera-mern/
 
 ---
 
-## 🌐 API Endpoints
+## API Endpoints
 
 Full interactive docs (Swagger UI): **https://aethera-api.onrender.com/docs**
 
