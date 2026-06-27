@@ -87,8 +87,6 @@ aethera-mern/
     └── src/
 ```
 
----
-
 ## API Endpoints
 
 Full interactive docs (Swagger UI): **https://aethera-api.onrender.com/docs**
